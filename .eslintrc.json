@@ -1,0 +1,129 @@
+{
+    "ignorePatterns": [
+      "./src/tests/coverage/"
+    ],
+    "env": {
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "standard",
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+      "plugin:prettier/recommended"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "eslint-plugin-import-helpers",
+      "prettier",
+      "unused-imports"
+    ],
+    "rules": {
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "import/no-duplicates": "off",
+      "@typescript-eslint/quotes": [
+        "error",
+        "single",
+        {
+          "allowTemplateLiterals": true
+        }
+      ],
+      "no-prototype-builtins": "off",
+      "no-restricted-syntax": "off",
+      "max-classes-per-file": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-console": "off",
+      "import/prefer-default-export": "off",
+      "@typescript-eslint/explicit-function-return-type": [
+        "off"
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          "argsIgnorePattern": "_"
+        }
+      ],
+      "no-useless-constructor": "off",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "interface",
+          "format": [
+            "PascalCase"
+          ],
+          "custom": {
+            "regex": "^I[A-Z]",
+            "match": true
+          }
+        }
+      ],
+      "@typescript-eslint/explicit-module-boundary-types": [
+        "warn",
+        {
+          "allowArgumentsExplicitlyTypedAsAny": true
+        }
+      ],
+      "no-underscore-dangle": "off",
+      "@typescript-eslint/camelcase": "off",
+      "class-methods-use-this": "off",
+      "import/extensions": [
+        "off",
+        "ignorePackages",
+        {
+          "ts": "never"
+        }
+      ],
+      "import-helpers/order-imports": [
+        "warn",
+        {
+          "newlinesBetween": "always", // new line between groups
+          "groups": [
+            "module",
+            "/^@server\/shared/",
+            "/^@/",
+            [
+              "parent",
+              "sibling",
+              "index"
+            ]
+          ],
+          "alphabetize": {
+            "order": "asc",
+            "ignoreCase": true
+          }
+        }
+      ],
+      "space-before-function-paren": "off",
+      "prettier/prettier": "error",
+      "no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "varsIgnorePattern": "^_",
+          "args": "after-used",
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "noUnusedLocals": false
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {
+          "directory": "packages/server/*/tsconfig.json"
+        }
+      }
+    }
+  }
+  

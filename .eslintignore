@@ -1,0 +1,8 @@
+**/*.js
+./src/tests
+./src/@types
+./src/logs
+./src/prisma
+tmp
+*.log
+./logs
